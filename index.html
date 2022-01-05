@@ -15,7 +15,7 @@
                background: #fff;
                height: 100%;
                --navbar-height:50px;
-               padding-top: var(--navbar-height)
+               padding-top: var(--navbar-height);
                overflow-y: hidden;
                
            }
@@ -26,7 +26,7 @@
                 overflow: hidden;
                 background: #352727;
                 position: fixed;
-                top: -3%;
+                top: 0;
                 display: flex;
                 align-items: center;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -78,7 +78,7 @@
                width: 100%;
                display: inline-block;
                background-image: url(Section1background.jpg);
-               bacground-height: ;
+            
            }
 
 
@@ -121,19 +121,22 @@
                 if (lastScrollY < window.scrollY)
                 {
                     console.log("yukarı");
-                    nav.classList.add("nav-hidden");
+                    document.getElementById(".navbar").style.top = "0";
 
                 }
                 else 
                 {
-                    console.log("aşağı");
-                    nav.classList.remove("nav-hidden");
+                   console.log("aşağı");
+                    document.getElementById(".navbar").style.top = "-50px";
                 }
 
                 lastScrollY = window.scrollY;
             });
-            
             */
+           
+                
+            
+            
             
 
 
@@ -146,8 +149,8 @@
 
 
     <body>
-        
-            <ul class="navbar">
+        <nav class="navbar">
+            <ul>
 
                 <li><a href="#section1">Ana Sayfa</a></li>
                 <li><a href="#section2">Hakkında</a></li>
@@ -155,6 +158,7 @@
                 <li><a href="#section4">İletişim</a></li>
 
              </ul>
+        </nav>
         
 
 
@@ -169,7 +173,7 @@
             <br>
             <h3>    Osman Atalay Kazım Karabekir Fen Lisesinden Mezun olmuş ve aktif <br> 
             <h3>    olarak Uludağ Üniversitesi Bilgisayar Mühendisliğinde Öğrenim Gör- <br>
-            <h3>    mektedir<h3>
+            <h3>    mektedir
 
         </div>
 
@@ -184,18 +188,18 @@
             <br>
             <br>
             <table cellpadding="20"
-            style="position: absolute;
+            style="position: static;
             width: 300px;
             height: 200px;
             z-index: 15;
             top: 235%;
             left: 20%;
-            margin: -100px 0 0 -150px;"
+            margin: -100px 0 0 100px;"
             >
 
                     <tr>
                         
-                        <td><img src="resim11.jpg" style="width:320px;height:480px;"></td>
+                        <td><img src="resim1.jpg" style="width:320px;height:480px;"></td>
                         <td><img src="resim2.jpg" style="width:320px;height:480px;"></td>
                         <td><img src="resim4.jpg" style="width:320px;height:480px;"></td>
                         
@@ -211,7 +215,7 @@
             <br>
             <h2> Herhangi Bir Sorunda Aşağıdaki Simgelere Tıklayarak Bana Ulaşabilirsiniz.</h2>
            
-            <p style="font-size: 30px;">LinkedIn <a href="https://www.linkedin.com/in/osman-atalay-kayalar-87a469228/"><img src="data:image/png;base64,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"  style="width:30px;height:30px;"></a></p>
+            <p style="font-size: 30px;">LinkedIn <a href="https://www.linkedin.com/in/osman-atalay-kayalar-87a469228/"> <img src="http://cdn.onlinewebfonts.com/svg/img_4827.png"  style="width:30px;height:30px;"></a></p>
             
             
             <p style="font-size: 30px;">Facebook <a href="https://www.facebook.com"> <img src="https://icon-library.com/images/facebook-icon-for-resume/facebook-icon-for-resume-8.jpg"  style="width:30px;height:30px;"></a></p>
